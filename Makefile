@@ -1,5 +1,7 @@
 .PHONY: all build run gotool clean help \
-	mysql-demo
+	mysql-demo \
+	sqlx-demo \
+	mod
 
 BINARY="go-demo"
 
@@ -12,8 +14,14 @@ build:
 run:
 	@go run ./main.go conf/config.yaml
 
+mod:
+	@go mod tidy
+
 mysql-demo:
 	@go run mysql-demo/main.go
+
+sqlx-demo:
+	@go run sqlx-demo/main.go
 
 gotool:
 	go fmt ./
