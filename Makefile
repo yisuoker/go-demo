@@ -2,6 +2,7 @@
 	mysql-demo \
 	sqlx-demo \
 	zap-demo \
+	redis-demo \
 	mod
 
 BINARY="go-demo"
@@ -26,6 +27,9 @@ sqlx-demo:
 
 zap-demo:
 	@go run zap-demo/main.go
+
+redis-demo:
+	@go run redis-demo/main.go
 
 gotool:
 	go fmt ./
