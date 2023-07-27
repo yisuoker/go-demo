@@ -3,3 +3,4 @@
 conf/config.yaml
 main
 go-demo
+*.log

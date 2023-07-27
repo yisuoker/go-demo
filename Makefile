@@ -1,6 +1,7 @@
 .PHONY: all build run gotool clean help \
 	mysql-demo \
 	sqlx-demo \
+	zap-demo \
 	mod
 
 BINARY="go-demo"
@@ -22,6 +23,9 @@ mysql-demo:
 
 sqlx-demo:
 	@go run sqlx-demo/main.go
+
+zap-demo:
+	@go run zap-demo/main.go
 
 gotool:
 	go fmt ./
