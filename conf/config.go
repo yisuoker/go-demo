@@ -9,14 +9,10 @@ import (
 
 var Cfg = new(AppCfg)
 
-type AppCfg struct {
-	Name    string `mapstructure:"name"`
-	Mode    string `mapstructure:"mode"`
-	Version string `mapstructure:"version"`
-	Port    int    `mapstructure:"port"`
-}
-
 func Init(cfgFile string) (err error) {
+	if "" == cfgFile {
+		cfgFile = "./conf/config.yaml"
+	}
 	viper.SetConfigFile(cfgFile)
 
 	if err = viper.ReadInConfig(); err != nil {
